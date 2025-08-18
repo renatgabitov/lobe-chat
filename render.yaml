@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: lobe-chat
+    env: docker
+    plan: starter
+    region: oregon
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3210
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: ACCESS_CODE
+        sync: false
+      - key: NEXT_PUBLIC_BASE_PATH
+        value: /
+    dockerImage: lobehub/lobe-chat:latest
